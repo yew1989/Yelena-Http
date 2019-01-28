@@ -1,0 +1,6 @@
+framework module Pods_YLHttp_Example {
+  umbrella header "Pods-YLHttp_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

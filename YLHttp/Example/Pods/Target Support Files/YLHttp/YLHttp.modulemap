@@ -1,0 +1,6 @@
+framework module YLHttp {
+  umbrella header "YLHttp-umbrella.h"
+
+  export *
+  module * { export * }
+}

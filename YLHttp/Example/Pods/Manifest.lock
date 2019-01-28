@@ -1,0 +1,41 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - YLCore (0.1.0)
+  - YLHttp (0.1.0):
+    - AFNetworking
+    - YLCore
+
+DEPENDENCIES:
+  - YLHttp (from `../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - YLCore
+
+EXTERNAL SOURCES:
+  YLHttp:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  YLCore: cd9fbd6c395f8a4db76988e511eea3404bf4ce40
+  YLHttp: 7dc43c60d7dd16c23a5a47da424fb3a0590c9603
+
+PODFILE CHECKSUM: 60a9b16545e4761c899c8ed7f5c951d2f436ccac
+
+COCOAPODS: 1.5.0
