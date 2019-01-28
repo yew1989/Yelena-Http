@@ -13,6 +13,10 @@
 
 // 设置超时时间
 + (void)setupTimeoutInterval:(CGFloat)timeoutInterval;
+
+// 设置鉴权字段
++(void)setupAuthorization:(NSString*)authorization;
+    
 // POST请求
 + (void)POST:(NSString *)url
       params:(NSDictionary *)params

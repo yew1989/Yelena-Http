@@ -6,11 +6,9 @@
 //  Copyright © 2019 LinWei. All rights reserved.
 //
 #import "YLHttpTool.h"
-
 #import <YLCore/YLMacro.h>
 #import <AFNetworking/AFNetworking.h>
 #import <YLCore/YLFileTool.h>
-
 
 @interface YLHttpToolConfig : NSObject
 
@@ -18,6 +16,8 @@
 
 // 默认超时时间 30s
 @property (nonatomic, assign) CGFloat timeoutInterval;
+
+@property (nonatomic, copy) NSString *authorization;
 
 @end
 
@@ -29,6 +29,7 @@
     dispatch_once(&once, ^{
         instance = [[YLHttpToolConfig alloc] init];
         instance.timeoutInterval = 30.f;
+        instance.authorization = @"";
     });
     return instance;
 }
@@ -48,6 +49,9 @@
     [newSet addObject:@"text/html"];
     [newSet addObject:@"text/plain"];
     [newSet addObject:@"application/javascript"];
+    if ([YLHttpToolConfig shareInstace].authorization.length > 0) {
+        [mgr.requestSerializer setValue:[YLHttpToolConfig shareInstace].authorization forHTTPHeaderField:@"Authorization"];
+    }
     mgr.responseSerializer.acceptableContentTypes = newSet;
     return mgr;
 }
@@ -60,9 +64,18 @@
     [YLHttpToolConfig shareInstace].timeoutInterval = timeoutInterval;
 }
 
++(void)setupAuthorization:(NSString*)authorization {
+    [YLHttpToolConfig shareInstace].authorization = authorization;
+}
+
 // 超时时间
 +(CGFloat)timeoutInterval {
     return [YLHttpToolConfig shareInstace].timeoutInterval;
+}
+
+// 鉴权字段
++(NSString*)authorization {
+    return [YLHttpToolConfig shareInstace].authorization;
 }
 
 
