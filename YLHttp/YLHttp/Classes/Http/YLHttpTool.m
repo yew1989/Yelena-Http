@@ -240,7 +240,7 @@
 
 + (void)failure:(CallBackFail)failure error:(NSError *)error {
     NSString *errorMessage = [error localizedDescription];
-    DLog(@"网络请求失败 -> 错误原因: %@", errorMessage)
+    DLog(@"网络请求失败 -> 错误原因: %@", errorMessage);
     if (failure)
         failure(error);
 }
