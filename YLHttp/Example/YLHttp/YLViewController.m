@@ -23,6 +23,7 @@
     // 设置鉴权字段
     [YLHttpTool setupAuthorization:@"Basic c3Vubnk6c3Vubnk="];
     
+    // 发起请求
     WEAK(self)
     [YLHttpTool POST:@"http://223.71.180.203:8081/authentication/form" params:@{@"password":@"sunny",@"username":@"user"}
     success:^(NSDictionary *JSON) {
